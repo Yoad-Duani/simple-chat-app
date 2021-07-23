@@ -14,9 +14,10 @@
 
 
 ## Getting Started
-#### - 1.
+   ##### for android:
    - In ```android/app/build.gradle``` find your applicationID and change it ``` applicationID "change_to_your_one"``` .
    - Use it when setup your firebase.
-   - Download the config file
-   - put the congig file in the app folder
-   - 
+   - Download the config file.
+   - Put the congig file in the app folder.
+   - Keep following the instructions [here](https://firebase.google.com/docs/android/setup).
+   - create the user authentication with the email and password and enable this.
