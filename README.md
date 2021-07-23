@@ -1,6 +1,14 @@
-# flash_chat_new
+# simple chat app
 
-A new Flutter application.
+one room chat app using firebase.
+
+### Features:
+ - Registration
+ - Login
+ - Sending messages in chat
+
+
+
 
 ## Getting Started
 
