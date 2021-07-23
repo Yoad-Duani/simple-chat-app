@@ -14,4 +14,9 @@
 
 
 ## Getting Started
-
+#### - 1.
+   - In ```android/app/build.gradle``` find your applicationID and change it ``` applicationID "change_to_your_one"``` .
+   - Use it when setup your firebase.
+   - Download the config file
+   - put the congig file in the app folder
+   - 
