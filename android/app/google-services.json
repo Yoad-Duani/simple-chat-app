@@ -1,33 +1,37 @@
+
+/// this file needs to be replaced with your file you created!!!
+/// this file needs to be replaced with your file you created!!!
+/// this file needs to be replaced with your file you created!!!
 {
   "project_info": {
-    "project_number": "848418903833",
+    "project_number": "**********",
     "project_id": "flash-chat-2a90e",
     "storage_bucket": "flash-chat-2a90e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:848418903833:android:1d40246e820fcccb4a1788",
+        "mobilesdk_app_id": "1:****:android:*******",
         "android_client_info": {
           "package_name": "yoadduani.flash_chat_new"
         }
       },
       "oauth_client": [
         {
-          "client_id": "848418903833-ijnbmig9ed09ljn6tp6b51cpobtf1qbv.apps.googleusercontent.com",
+          "client_id": "*********.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDOQom0Q1pj-ZPWY1SZaCXmQl_2QdThhsI"
+          "current_key": "***********************"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "848418903833-ijnbmig9ed09ljn6tp6b51cpobtf1qbv.apps.googleusercontent.com",
+              "client_id": "***********************.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
