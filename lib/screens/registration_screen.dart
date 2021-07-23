@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flash_chat_new/components/rounded_button.dart';
-import 'package:flash_chat_new/constants.dart';
+import 'file:///C:/yoad-new/study/flutter/FlutterCourseAngela/flash_chat_new/lib/utilities/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'chat_screen.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';

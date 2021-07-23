@@ -1,11 +1,11 @@
 import 'package:flash_chat_new/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flash_chat_new/constants.dart';
+import 'file:///C:/yoad-new/study/flutter/FlutterCourseAngela/flash_chat_new/lib/utilities/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:bubble/bubble.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:flash_chat_new/components/message_bubble.dart';
 
 final _firestore = FirebaseFirestore.instance;
 User loggedInUser;
@@ -183,7 +183,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
 class MessagesStream extends StatelessWidget {
   String getMessageTime(var timeStamp) {
-    // DateTime date1 = new DateTime(timeStamp.millisecondsSinceEpoch).toUtc();
     DateTime date = new DateTime.fromMillisecondsSinceEpoch(timeStamp.millisecondsSinceEpoch);
     var formatTime = new DateFormat('HH:mm');
     var timeString = formatTime.format(date);
@@ -202,8 +201,6 @@ class MessagesStream extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         }
-
-        //FirebaseFirestore.instance.collection('collection_name').doc('document_id').update({'field_name': 'Some new data'});
 
         final messages = snapshot.data.docs.reversed;
         List<MessageBubble> messageBubbles = [];
@@ -250,129 +247,6 @@ class MessagesStream extends StatelessWidget {
 
         // return Column();
       },
-    );
-  }
-}
-
-class MessageBubble extends StatelessWidget {
-  MessageBubble({this.sender, this.text, this.isMe, this.messageTime, this.isRead});
-
-  final String sender;
-  final String text;
-  final bool isMe;
-  final String messageTime;
-  final bool isRead;
-
-  Row getIconDone_All() {
-    return Row(
-      children: [
-        SizedBox(
-          width: 5.0,
-        ),
-        Icon(
-          Icons.done_all,
-          size: 20.0,
-          color: isRead == false ? Colors.grey : Color(0xff34B7F1),
-        ),
-      ],
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 0.0),
-      child: Bubble(
-        margin: BubbleEdges.only(top: 10),
-        alignment: isMe ? Alignment.topRight : Alignment.topLeft,
-        nip: isMe ? BubbleNip.rightBottom : BubbleNip.leftTop,
-        color: isMe ? Color.fromRGBO(225, 255, 199, 1.0) : Colors.white,
-        radius: Radius.circular(15.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (isMe == false)
-              Text(
-                sender.substring(0, sender.indexOf('@')),
-                style: TextStyle(fontSize: 15.0, color: Colors.pink[200]),
-              ),
-            SizedBox(
-              height: 3.0,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              // textBaseline: TextBaseline.alphabetic,
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Flexible(
-                  child: Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 6.0),
-                      child: Text(
-                        text,
-                        textAlign: isMe ? TextAlign.left : TextAlign.left,
-                        style: TextStyle(fontSize: 18.0),
-                        // overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 14.0,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      messageTime,
-                      style: TextStyle(color: Colors.black38, fontSize: 13),
-                    ),
-                    if (isMe == true) getIconDone_All(),
-                  ],
-                ),
-              ],
-            ),
-            // Text('${messageTime == null ? DateTime.now().hour : messageTime.toDate().hour} '),
-          ],
-        ),
-      ),
-      // child: Column(
-      //   crossAxisAlignment: isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-      //   children: [
-      //     Text(
-      //       sender,
-      //       style: TextStyle(
-      //         fontSize: 12.0,
-      //         color: Colors.black45,
-      //       ),
-      //     ),
-      //     Material(
-      //       borderRadius: isMe
-      //           ? BorderRadius.only(
-      //               topLeft: Radius.circular(10.0),
-      //               bottomLeft: Radius.circular(10.0),
-      //               bottomRight: Radius.circular(10.0),
-      //             )
-      //           : BorderRadius.only(
-      //               topRight: Radius.circular(10.0),
-      //               bottomLeft: Radius.circular(10.0),
-      //               bottomRight: Radius.circular(10.0),
-      //             ),
-      //       elevation: 3.0,
-      //       color: isMe ? Color(0xffDCF8C6) : Colors.white,
-      //       child: Padding(
-      //         padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-      //         child: Text(
-      //           text,
-      //           style: TextStyle(
-      //             color: isMe ? Colors.black54 : Colors.black54,
-      //             fontSize: 16.0,
-      //           ),
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),
     );
   }
 }

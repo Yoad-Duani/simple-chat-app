@@ -1,5 +1,5 @@
 import 'package:flash_chat_new/components/rounded_button.dart';
-import 'package:flash_chat_new/constants.dart';
+import 'file:///C:/yoad-new/study/flutter/FlutterCourseAngela/flash_chat_new/lib/utilities/constants.dart';
 import 'package:flash_chat_new/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
